@@ -1,32 +1,57 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import styled from 'styled-components'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const Menu = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+  const Logo = styled.div`
+  width: 200px;
+`;
+  const Header = styled.div`
+  width: 1000px;
+  display: flex;
+  // background: pink;
+  justify-content: space-between;
+`;
+
+  const Button = styled.div`
+  background: #D9D9D9;
+  border-radius: 20px;
+  margin: 0 10px;
+  width: 100px;
+`
+
+  const Body = styled.div`
+  width: 1000px;
+  height: 500px;
+`
+
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header>
+        {/* Logo */}
+        <Logo>
+          らくらくたび
+        </Logo>
+
+        {/* Menu */}
+        <Menu>
+          {/* MenuItem */}
+          <Button>HELP</Button>
+          <Button>LOGIN</Button>
+        </Menu>
+      </Header>
+      <hr />
+      <Body>コンテンツ</Body>
     </div>
   )
 }
